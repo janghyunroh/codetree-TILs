@@ -1,0 +1,1 @@
+print(f'Your score is', int(input()), 'point.')
