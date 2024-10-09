@@ -7,8 +7,8 @@ using namespace std;
 string s;
 int main() {
     cin >> s;
-    int cur_depth = 0;
-    int ans = 0;
+    long long cur_depth = 0;
+    long long ans = 0;
     char prev_par;
     for(int i =0; i < s.length(); i++) {
         if(s[i] == '(') {
