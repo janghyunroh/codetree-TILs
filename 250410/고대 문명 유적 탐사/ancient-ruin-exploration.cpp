@@ -42,7 +42,7 @@ public:
         }
 
         //돌리기
-        for(int i = 0; i < angle; i++) {
+        for(int i = 0; i <= angle; i++) {
             
             int partGrid[3][3];
             // 임시 배열에 3×3 부분 보드 복사
