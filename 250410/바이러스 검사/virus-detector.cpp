@@ -29,7 +29,7 @@ int main() {
     //solve
     ll sm = 0;
     for(int i = 0; i < n; i++) {
-        int k = ceil(((float)customePerStore[i] - a) / b);
+        ll k = ceil(((float)customePerStore[i] - a) / b);
         sm += (k + 1);
     }
     cout << sm;
