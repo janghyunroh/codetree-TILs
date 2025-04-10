@@ -12,7 +12,8 @@ using namespace std;
 
 //최대 범위 : 1000000 x 1000000 -> long long 필요
 
-int n, a, b;
+int n, a;
+double b;
 int customePerStore[1000000];
 int main() {
 
@@ -21,7 +22,7 @@ int main() {
 
     //input
     cin >> n;
-    for(int i =0; i < n; i++) {
+    for(int i = 0; i < n; i++) {
         cin >> customePerStore[i];
     }
     cin >> a >> b;
@@ -29,7 +30,8 @@ int main() {
     //solve
     ll sm = 0;
     for(int i = 0; i < n; i++) {
-        ll k = (ll)ceil(((double)customePerStore[i] - a) / b);
+        ll k = ceil((customePerStore[i] - a) / b);
+        if(k < 0) k = 0;
         sm += (k + 1);
     }
     cout << sm;
