@@ -124,12 +124,12 @@ void hiderMoveAll() {
         for(int j = 0; j < N; j++) {
 
             if(distFromSeeker(i, j) <= 3) {
-                for(int k = 0; k < hiders[i][j].size(); k++) {
+                for(int k = 0; k < (int)hiders[i][j].size(); k++) {
                     hiderMove(i, j, hiders[i][j][k]);
                 }
             }
             else {
-                for(int k = 0; k < hiders[i][j].size(); k++) {
+                for(int k = 0; k < (int)hiders[i][j].size(); k++) {
                     next_hiders[i][j].push_back(hiders[i][j][k]);
                 }
             }
