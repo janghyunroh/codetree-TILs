@@ -42,6 +42,7 @@ bool tree[MAX_N][MAX_N];
 
 int seeker_next_dir[MAX_N][MAX_N];
 int seeker_rev_dir[MAX_N][MAX_N];
+
 pair<int, int> seeker_pos;
 bool forward_facing = true;
 int ans;
@@ -65,7 +66,7 @@ void initializeSeekerPath() {
             cy += dy[move_dir];
 
             // 반대 방향 행렬은 반대방향으로 기록
-            seeker_rev_dir[cx][cy] = (move_dir < 2);
+            seeker_rev_dir[cx][cy] = (move_dir < 2) ? (move_dir + 2) : (move_dir - 2);
 
             if(!cx && !cy) break;
         }
@@ -159,6 +160,7 @@ void checkerFacing() {
     if(seeker_pos == make_pair(0, 0) && forward_facing) forward_facing = false;
     if(seeker_pos == make_pair(N/2, N/2) && !forward_facing) forward_facing = true;
 }
+
 void seekerMove() {
     int x = seeker_pos.first;
     int y = seeker_pos.second;
@@ -188,7 +190,7 @@ void getScore(int t) {
         int ny = y + dist * dy[move_dir];
 
         if(inRange(nx, ny) && !tree[nx][ny]) {
-            ans += t * hiders[nx][ny].size();
+            ans += t * (int)hiders[nx][ny].size();
             hiders[nx][ny].clear();
         }
     }
